@@ -1,5 +1,7 @@
 package com.pi.pi_ods3.models;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -16,52 +18,53 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+// @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "bula")
+// @NoArgsConstructor
+// @AllArgsConstructor
+// @Table(name = "bula")
+@Document(collection = "bula")
 public class Bula {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "medicamento_id")
-    @JsonIgnore
-    private Medicamento medicamento;
+    // @OneToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "medicamento_id")
+    // @JsonIgnore
+    // private Medicamento medicamento;
 
-    @Column(name = "indicacao", length = 3000)
+    // @Column(name = "indicacao", length = 3000)
     private String indicacao;
 
-    @Column(name = "uso", length = 3000)
+    // @Column(name = "uso", length = 3000)
     private String uso;
 
-    @Column(name = "funcionamento", length = 3000)
+    // @Column(name = "funcionamento", length = 3000)
     private String funcionamento;
 
-    @Column(name = "nao_usar", length = 3000)
+    // @Column(name = "nao_usar", length = 3000)
     private String naoUsar;
 
-    @Column(name = "antes_de_usar", length = 4000)
+    // @Column(name = "antes_de_usar", length = 4000)
     private String antesDeUsar;
 
-    @Column(name = "males", length = 4000)
+    // @Column(name = "males", length = 4000)
     private String males;
 
-    @Column(name = "armazenamento", length = 4000)
+    // @Column(name = "armazenamento", length = 4000)
     private String armazenamento;
 
-    @Column(name = "esquecer_de_usar", length = 2000)
+    // @Column(name = "esquecer_de_usar", length = 2000)
     private String esquecerDeUsar;
 
-    @Column(name = "superdose", length = 2000)
+    // @Column(name = "superdose", length = 2000)
     private String superdose;
 
-    @Column(name = "apresentacao", length = 4000)
+    // @Column(name = "apresentacao", length = 4000)
     private String apresentacao;
 
-    @Column(length = 2000)
+    // @Column(length = 2000)
     private String composicao;
 
 }
