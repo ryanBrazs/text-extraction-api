@@ -10,8 +10,13 @@ import com.pi.pi_ods3.repository.MedicamentoRepository;
 
 @Service
 public class MedicamentoService {
+    private final MedicamentoRepository repository;
+
     @Autowired
-    private MedicamentoRepository repository;
+    public MedicamentoService(MedicamentoRepository repository) {
+        this.repository = repository;
+    }
+
 
     public List<Medicamento> listarTodos() {
         return repository.findAll();
